@@ -44,19 +44,20 @@ export const Test = () => {
     if (score > 8) i = 1;
     if (score > 12) i = 2;
     if (score > 17) i = 3;
-    const paragraphs = results[i]?.p.map((txt, idx) => {
-      if (idx === results[i]?.p.length - 1) {
-        return (
-          <p key={idx}>
-            {txt} <span>{results[i]?.span}</span>.
-          </p>
-        );
-      } else {
-        return <p key={idx}>{txt}</p>;
-      }
-    });
+    // const paragraphs = results[i]?.p.map((txt, idx) => {
+    //   if (idx === results[i]?.p.length - 1) {
+    //     return (
+    //       <p key={idx}>
+    //         {txt} <span>{results[i]?.span}</span>.
+    //       </p>
+    //     );
+    //   } else {
+    //     return <p key={idx}>{txt}</p>;
+    //   }
+    // });
 
-    return <>{paragraphs}</>;
+    // return <>{paragraphs}</>
+    return i;
   }
 
   const resetTest = (idx) => {
@@ -78,10 +79,11 @@ export const Test = () => {
     }
   }, [index]);
 
+  let i = getResults() 
   return (
     <div className='container'>
       <div className='header'>
-        <img src={logo} style={{height:50}} alt="UNDelta"/>
+        <img src={logo} style={{ height: 50 }} alt="UNDelta" />
         <h1>UNDelta Test</h1>
       </div>
       {
@@ -91,7 +93,7 @@ export const Test = () => {
           <div className="home">
             <p>¿Tenés ganas de estudiar y todavía no sabés <span>dónde</span> ni <span>qué</span>? La parte de "dónde" está resuelta, ahora que llegó UNDelta a la región. Para la parte de qué, el <span>"UNDelta Test"</span> es para vos.</p>
             <p>
-           Tomate 5 minutos, respondé unas sencillas preguntas y descubrí cuál es la mejor opción para tu futuro. ¿Estás listo?</p>
+              Tomate 5 minutos, respondé unas sencillas preguntas y descubrí cuál es la mejor opción para tu futuro. ¿Estás listo?</p>
             <button onClick={handleQuestion}>Comenzar Test</button>
           </div>
 
@@ -99,7 +101,19 @@ export const Test = () => {
           index === data.length ?
             loading ? <Spinner text={"Analizando respuestas..."} /> :
               <div className='results'>
-                {getResults()}
+                {
+                  results[i]?.p.map((txt, idx) => {
+                    if (idx === results[i]?.p.length - 1) {
+                      return (
+                        <p key={idx}>
+                          {txt} <span>{results[i]?.span}</span>.
+                        </p>
+                      );
+                    } else {
+                      return <p key={idx}>{txt}</p>;
+                    }
+                  })}
+                <a href={results[i].link} target='_blank' >Leer más acerca de esta Diplomatura</a>
                 <div>
                   <button onClick={() => resetTest(-1)}>Volver al Menú</button>
                   <button onClick={() => resetTest(0)}>Rehacer Test</button>

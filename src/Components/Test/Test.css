@@ -68,12 +68,19 @@ button:disabled {
 .results {
     font-size: 20px;
     text-align: justify;
+    display: flex;
+    flex-direction: column;
 }
 
+.results a{
+    align-self: center;
+    text-decoration: none;
+    color: #2b30d1;
+    margin-top: 25px;
+}
 .results p {
     margin-bottom: 10px;
 }
-
 span{
     font-weight: 700;
 }
