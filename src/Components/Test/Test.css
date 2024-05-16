@@ -1,7 +1,7 @@
 .container{
     width: 80%;
     margin: auto;
-    margin-top: 50px;
+    margin-block: 50px;
     background: white;
     color: #262626;
     display: flex;
@@ -22,7 +22,7 @@
     align-items: center;
     min-height: 70px;
     padding-inline: 15px;
-    border: 1px solid #d9d9d9;
+    border: 1px solid #e8e8e8;
     border-radius: 8px;
     margin-bottom: 20px;
     cursor: pointer;
@@ -31,6 +31,7 @@
 
 .container button{
     margin: auto;
+    border: none;
     height: 65px;
     width: 40%;
     background-color: #2b30d1;
@@ -57,7 +58,7 @@ button:disabled {
 }
 
 .checked{
-    background: #befee4;
+    background: #e7fff5;
     border-color: #239c7a;
 }
 
@@ -91,7 +92,10 @@ button:disabled {
         padding: 15px;
     }
     .container span, .container p, .container li, .container button{
-        font-size: 14px;
+        font-size: 16px;
+    }
+    .container li{
+        padding: 10px;
     }
     .container button{
         margin: auto;
