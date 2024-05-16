@@ -77,6 +77,7 @@ button:disabled {
     text-decoration: none;
     color: #2b30d1;
     margin-top: 25px;
+    text-align: center;
 }
 .results p {
     margin-bottom: 10px;
@@ -185,5 +186,8 @@ span{
 
     .results img {
         height: 25px;
+    }
+    .results a{
+        font-size: 14px;
     }
 }
