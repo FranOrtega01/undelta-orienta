@@ -113,7 +113,7 @@ export const Test = () => {
                       return <p key={idx}>{txt}</p>;
                     }
                   })}
-                <a href={results[i].link} target='_blank' >Leer más acerca de esta Diplomatura</a>
+                <a href={results[i].link} target='_blank' rel="noreferrer">Leer más acerca de esta Diplomatura</a>
                 <div>
                   <button onClick={() => resetTest(-1)}>Volver al Menú</button>
                   <button onClick={() => resetTest(0)}>Rehacer Test</button>
