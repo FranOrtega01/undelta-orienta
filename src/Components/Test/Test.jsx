@@ -28,6 +28,8 @@ export const Test = () => {
     optionsElements.forEach((option) => {
       option.classList.remove('checked');
     });
+    setScore(score + selectedValue);
+    setSelectedValue(0);
   }
 
   const getResults = () => {
@@ -61,8 +63,6 @@ export const Test = () => {
 
   useEffect(() => {
     setQuestion(data[index]);
-    setScore(score + selectedValue);
-    setSelectedValue(0);
   }, [index]);
 
   return (
